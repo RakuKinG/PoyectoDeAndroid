@@ -45,7 +45,7 @@ class PortadaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         enlace.InformarIncidencia.setOnClickListener {
-            findNavController().navigate(R.id.action_portadaFragment_to_juegoFragment)
+            findNavController().navigate(R.id.action_portadaFragment_to_detalles)
         }
     }
 

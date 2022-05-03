@@ -7,8 +7,12 @@
     <fragment
         android:id="@+id/portadaFragment"
         android:name="iestr.gag.grafo6.PortadaFragment"
-        android:label="Portada"
-        tools:layout="@layout/fragment_portada" />
+        android:label="Reparaciones ubranisticas"
+        tools:layout="@layout/fragment_portada" >
+        <action
+            android:id="@+id/action_portadaFragment_to_detalles"
+            app:destination="@id/detalles" />
+    </fragment>
     <fragment
         android:id="@+id/ajustesFragment"
         android:name="iestr.gag.grafo6.AjustesFragment"
@@ -27,6 +31,6 @@
     <fragment
         android:id="@+id/detalles"
         android:name="iestr.gag.grafo6.Detalles"
-        android:label="fragment_detalles"
+        android:label="Detalle de la incidencia"
         tools:layout="@layout/fragment_detalles" />
 </navigation>
