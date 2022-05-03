@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/thera/Desktop/Proyecto android/PoyectoDeAndroid/Grafo6_Bottom/app/src/main/res/layout/activity_main.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/thera/Desktop/Proyecto android/PoyectoDeAndroid/Grafo6_Bottom/app/src/main/res/layout/fragment_detalles.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/thera/Desktop/Proyecto android/PoyectoDeAndroid/Grafo6_Bottom/app/src/main/res/layout/fragment_portada.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/thera/Desktop/Proyecto android/PoyectoDeAndroid/Grafo6_Bottom/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2235" />
+        <entry key="..\:/Users/thera/Desktop/Proyecto android/PoyectoDeAndroid/Grafo6_Bottom/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2235" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3353846153846154" />
         <entry key="app/src/main/res/layout/cabecera.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_ajustes.xml" value="0.35572916666666665" />

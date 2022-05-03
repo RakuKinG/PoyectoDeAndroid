@@ -7,63 +7,26 @@
     <fragment
         android:id="@+id/portadaFragment"
         android:name="iestr.gag.grafo6.PortadaFragment"
-        android:label="fragment_portada"
-        tools:layout="@layout/fragment_portada" >
-        <action
-            android:id="@+id/action_portadaFragment_to_juegoFragment"
-            app:destination="@id/juegoFragment"
-            app:enterAnim="@android:anim/slide_in_left" />
-    </fragment>
-    <fragment
-        android:id="@+id/ganaFragment"
-        android:name="iestr.gag.grafo6.GanaFragment"
-        android:label="fragment_gana"
-        tools:layout="@layout/fragment_gana" >
-        <argument
-            android:name="puntos"
-            app:argType="string" />
-        <argument
-            android:name="nivel"
-            app:argType="string" />
-    </fragment>
-    <fragment
-        android:id="@+id/juegoFragment"
-        android:name="iestr.gag.grafo6.JuegoFragment"
-        android:label="fragment_juego"
-        tools:layout="@layout/fragment_juego" >
-        <action
-            android:id="@+id/action_juegoFragment_to_ganaFragment"
-            app:destination="@id/ganaFragment"
-            app:popUpTo="@id/juegoFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_juegoFragment_to_pierdeFragment"
-            app:destination="@id/pierdeFragment"
-            app:popUpTo="@id/portadaFragment"
-            app:popUpToInclusive="false" />
-    </fragment>
-    <fragment
-        android:id="@+id/pierdeFragment"
-        android:name="iestr.gag.grafo6.PierdeFragment"
-        android:label="fragment_pierde"
-        tools:layout="@layout/fragment_pierde" >
-        <argument
-            android:name="mensaje"
-            app:argType="string" />
-    </fragment>
+        android:label="Portada"
+        tools:layout="@layout/fragment_portada" />
     <fragment
         android:id="@+id/ajustesFragment"
         android:name="iestr.gag.grafo6.AjustesFragment"
-        android:label="fragment_ajustes"
+        android:label="Ajustes"
         tools:layout="@layout/fragment_ajustes" />
     <fragment
         android:id="@+id/creditosFragment"
         android:name="iestr.gag.grafo6.CreditosFragment"
-        android:label="fragment_creditos"
+        android:label="Creditos"
         tools:layout="@layout/fragment_creditos" />
     <fragment
         android:id="@+id/ayudaFragment"
         android:name="iestr.gag.grafo6.AyudaFragment"
-        android:label="fragment_ayuda"
+        android:label="Ayuda"
         tools:layout="@layout/fragment_ayuda" />
+    <fragment
+        android:id="@+id/detalles"
+        android:name="iestr.gag.grafo6.Detalles"
+        android:label="fragment_detalles"
+        tools:layout="@layout/fragment_detalles" />
 </navigation>
