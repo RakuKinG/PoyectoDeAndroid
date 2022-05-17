@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF9800"
     tools:context=".AyudaFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/holo_orange_dark"
-        android:gravity="center"
-        android:text="?"
-        android:textColor="@color/white"
-        android:textSize="200sp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="311dp"
+        android:layout_height="290dp"
+        android:background="#FF9800"
+        android:gravity="center"
+        android:text="Para registrar una incidencia debe seguir los siguientes pasos:
+"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.060000002" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.- Primero debera rellenar los datos personales del formulario que se encuentra al abrir la aplicacion.\n\n2.- Debe rellenar los campos obligatorios*.\n\n3.- Cuando pulse Informar Incidencia, sera redirigido a la siguiente ventana donde procedera a rellenar la incidencia, de que se trata, lugar y evidencias.\n\n4.-Su incidencia pasara ha estado de revision, y recibira una notificacion por email del estado de la incidencia"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.943" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
