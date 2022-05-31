@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import iestr.gag.grafo6.databinding.FragmentPortadaBinding
 
@@ -41,13 +42,66 @@ class PortadaFragment : Fragment() {
         enlace= FragmentPortadaBinding.inflate(inflater, container,false)
         return enlace.root
     }
+    fun soloNumeros():Boolean{
+        var numero=""
+        var miDNI=""
+        val unoNueve = arrayOf("0","1","2","3","4","5","6","7","8","9")
+        for (i in 0..enlace.dni.text.length){
+            numero= enlace.dni.text.substring(i,i+1)
+            for (j in 0..unoNueve.size){
+
+                if(numero == unoNueve[j]){
+                    miDNI+=unoNueve[j]
+                }
+
+            }
+        }
+        return miDNI.length == 8
+    }
+
+    fun letraDNI():String{
+        var miLetra:String
+        var resto=0
+        val asignacionLetra = arrayOf("T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E")
+        var miDNI=Integer.parseInt(enlace.dni.text.substring(0,8))
+        resto=miDNI%23;
+        miLetra=asignacionLetra[resto];
+        return miLetra;
+
+    }
+
+    fun validadorDNI():Boolean{
+
+        var letra:String=""
+
+        if (enlace.dni.text.length!=9 ) return false
+
+        letra=enlace.dni.text.substring(8).uppercase()
+        return soloNumeros() && letraDNI() == letra
+
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         enlace.InformarIncidencia.setOnClickListener {
-            findNavController().navigate(R.id.action_portadaFragment_to_detalles)
+            if(!validadorDNI()){
+                Toast.makeText(context, "El DNI no es correcto", Toast.LENGTH_SHORT).show()
+
+            }
+            if(enlace.nombre.text.isNullOrBlank()){
+                Toast.makeText(context, "El nombre no puede estar vacio", Toast.LENGTH_SHORT).show()
+            }else if (enlace.dni.text.isNullOrBlank()){
+
+                Toast.makeText(context, "El dni no puede estar vacio", Toast.LENGTH_SHORT).show()
+            }else if (enlace.email.text.isNullOrBlank()){
+                Toast.makeText(context, "El email no puede estar vacio", Toast.LENGTH_SHORT).show()
+            }else {
+
+                findNavController().navigate(R.id.action_portadaFragment_to_detalles)
+            }
         }
     }
+
 
     companion object {
         /**
