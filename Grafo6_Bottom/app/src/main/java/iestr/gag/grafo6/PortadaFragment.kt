@@ -1,13 +1,15 @@
 package iestr.gag.grafo6
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import iestr.gag.grafo6.databinding.FragmentPortadaBinding
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,59 +44,40 @@ class PortadaFragment : Fragment() {
         enlace= FragmentPortadaBinding.inflate(inflater, container,false)
         return enlace.root
     }
-    fun soloNumeros():Boolean{
-        var numero=""
-        var miDNI=""
-        val unoNueve = arrayOf("0","1","2","3","4","5","6","7","8","9")
-        for (i in 0..enlace.dni.text.length){
-            numero= enlace.dni.text.substring(i,i+1)
-            for (j in 0..unoNueve.size){
 
-                if(numero == unoNueve[j]){
-                    miDNI+=unoNueve[j]
-                }
-
-            }
-        }
-        return miDNI.length == 8
+    fun validarDNI():Boolean{
+        return validarDNIPattern(enlace.dni.text.toString().trim())
     }
-
-    fun letraDNI():String{
-        var miLetra:String
-        var resto=0
-        val asignacionLetra = arrayOf("T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E")
-        var miDNI=Integer.parseInt(enlace.dni.text.substring(0,8))
-        resto=miDNI%23;
-        miLetra=asignacionLetra[resto];
-        return miLetra;
-
+    fun validarDNIPattern(dni:String):Boolean{
+        return Pattern.compile("[0-9]{7,8}[A-Z a-z]").matcher(dni).matches()
     }
-
-    fun validadorDNI():Boolean{
-
-        var letra:String=""
-
-        if (enlace.dni.text.length!=9 ) return false
-
-        letra=enlace.dni.text.substring(8).uppercase()
-        return soloNumeros() && letraDNI() == letra
-
+    private fun validarEmail():Boolean{
+        return isValidEmailId(enlace.email.text.toString().trim())
+    }
+    private fun isValidEmailId(email: String): Boolean {
+        return Pattern.compile(
+            "^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                    + "((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                    + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                    + "([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                    + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                    + "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$"
+        ).matcher(email).matches()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         enlace.InformarIncidencia.setOnClickListener {
-            if(!validadorDNI()){
+            if(!validarDNI()){
                 Toast.makeText(context, "El DNI no es correcto", Toast.LENGTH_SHORT).show()
 
-            }
-            if(enlace.nombre.text.isNullOrBlank()){
+            }else if(enlace.nombre.text.isNullOrBlank()){
                 Toast.makeText(context, "El nombre no puede estar vacio", Toast.LENGTH_SHORT).show()
-            }else if (enlace.dni.text.isNullOrBlank()){
+            }else if (!validarEmail()){
 
-                Toast.makeText(context, "El dni no puede estar vacio", Toast.LENGTH_SHORT).show()
-            }else if (enlace.email.text.isNullOrBlank()){
-                Toast.makeText(context, "El email no puede estar vacio", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Formato de email no valido", Toast.LENGTH_SHORT).show();
+
+
             }else {
 
                 findNavController().navigate(R.id.action_portadaFragment_to_detalles)
