@@ -7,17 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import iestr.gag.grafo6.databinding.FragmentDetallesBinding
 import iestr.gag.grafo6.databinding.FragmentPantallaFinalBinding
 
-class Detalles : Fragment() {
-
-    lateinit var enlace: FragmentDetallesBinding
-
+class PantallaFinal : Fragment() {
+    lateinit var enlace: FragmentPantallaFinalBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-
         }
     }
 
@@ -26,22 +22,21 @@ class Detalles : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        enlace= FragmentDetallesBinding.inflate(inflater, container,false)
+        enlace= FragmentPantallaFinalBinding.inflate(inflater, container,false)
         return enlace.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        enlace.botonInicidencia.setOnClickListener {
+        enlace.botonVolver.setOnClickListener {
             Toast.makeText(context, "Volviendo", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_detalles_to_pantallaFinal)
+            findNavController().navigate(R.id.action_detalles3_to_portadaFragment)
         }
     }
 
     companion object {
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Detalles().apply {
+            PantallaFinal().apply {
                 arguments = Bundle().apply {
                 }
             }

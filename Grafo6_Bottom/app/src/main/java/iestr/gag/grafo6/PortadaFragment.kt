@@ -1,5 +1,6 @@
 package iestr.gag.grafo6
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.VolleyError
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import iestr.gag.grafo6.databinding.FragmentPortadaBinding
 import java.util.regex.Matcher
 import java.util.regex.Pattern
@@ -79,10 +85,44 @@ class PortadaFragment : Fragment() {
 
 
             }else {
-
+                insertar();
                 findNavController().navigate(R.id.action_portadaFragment_to_detalles)
             }
         }
+    }
+    
+
+    private fun insertar() {
+        var nombre:String =enlace.nombre.text.toString().trim()
+
+        var dni:String =enlace.dni.text.toString().trim()
+
+        var email:String =enlace.email.text.toString().trim()
+
+        var telefono:String =enlace.telefono.text.toString().trim()
+
+
+        // ...
+
+        // Instantiate the RequestQueue.
+        val queue = Volley.newRequestQueue(context)
+        val url = "http://www.google.com"
+
+        // Request a string response from the provided URL.
+        val stringRequest = StringRequest(
+            Request.Method.GET, url,
+            { response ->
+                // Display the first 500 characters of the response string.
+                Toast.makeText(context, "todo bien", Toast.LENGTH_SHORT).show()
+            },
+            {
+                Toast.makeText(context, "fallo!", Toast.LENGTH_SHORT).show() })
+
+        // Add the request to the RequestQueue.
+        queue.add(stringRequest)
+
+
+
     }
 
 

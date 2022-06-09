@@ -32,5 +32,18 @@
         android:id="@+id/detalles"
         android:name="iestr.gag.grafo6.Detalles"
         android:label="Detalle de la incidencia"
-        tools:layout="@layout/fragment_detalles" />
+        tools:layout="@layout/fragment_detalles" >
+        <action
+            android:id="@+id/action_detalles_to_pantallaFinal"
+            app:destination="@id/pantallaFinal" />
+    </fragment>
+    <fragment
+        android:id="@+id/pantallaFinal"
+        android:name="iestr.gag.grafo6.PantallaFinal"
+        android:label="Detalle de la incidencia"
+        tools:layout="@layout/fragment_pantalla_final" >
+        <action
+            android:id="@+id/action_detalles3_to_portadaFragment"
+            app:destination="@id/portadaFragment" />
+    </fragment>
 </navigation>
