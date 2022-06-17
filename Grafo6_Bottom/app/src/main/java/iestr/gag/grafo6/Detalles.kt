@@ -38,14 +38,45 @@ class Detalles : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         enlace.botonInicidencia.setOnClickListener {
+            if (enlace.tituloIncidencia.text.toString().isNullOrBlank()) {
+                enlace.nombreError.visibility = View.VISIBLE
+
+            }else{
+                enlace.nombreError.visibility = View.GONE
+            }
+
+            if (enlace.descripcionIncidencia.text.toString().isNullOrBlank()) {
+                enlace.descripcionError.visibility = View.VISIBLE
+
+            }else{
+                enlace.descripcionError.visibility = View.GONE
+                     }
+            if(enlace.tipoIncidencia.text.toString().isNullOrBlank()){
+                enlace.tipoError.visibility=View.VISIBLE
+
+            }else{
+                enlace.tipoError.visibility=View.GONE
+            }
+            if(enlace.ubicacionIncidencia.text.toString().isNullOrBlank()){
+                enlace.calleError.visibility=View.VISIBLE
+
+            }
+            else {
+                enlace.calleError.visibility=View.VISIBLE
+            }
+            if (enlace.calleError.visibility==View.GONE &&
+                enlace.tipoIncidencia.visibility==View.GONE &&
+                enlace.tituloIncidencia.visibility==View.GONE &&
+                enlace.descripcionError.visibility==View.GONE &&
+                enlace.ubicacionIncidencia.visibility==View.GONE){
 
             Toast.makeText(context, "Informe Creado", Toast.LENGTH_SHORT).show()
             insertar()
             findNavController().navigate(R.id.action_detalles_to_portadaFragment)
         }
         enlace.imageButton.setOnClickListener{
-            findNavController().navigate(R.id.action_detalles_to_maps)
-
+                findNavController().navigate(R.id.action_detalles_to_maps)
+            }
         }
     }
 
