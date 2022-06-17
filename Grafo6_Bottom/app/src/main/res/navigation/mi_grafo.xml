@@ -34,16 +34,17 @@
         android:label="Detalle de la incidencia"
         tools:layout="@layout/fragment_detalles" >
         <action
-            android:id="@+id/action_detalles_to_pantallaFinal"
-            app:destination="@id/pantallaFinal" />
-    </fragment>
-    <fragment
-        android:id="@+id/pantallaFinal"
-        android:name="iestr.gag.grafo6.PantallaFinal"
-        android:label="Detalle de la incidencia"
-        tools:layout="@layout/fragment_pantalla_final" >
+            android:id="@+id/action_detalles_to_maps"
+            app:destination="@id/maps" />
+        <argument android:name="dni_usuario"
+            app:argType="string" />
         <action
-            android:id="@+id/action_detalles3_to_portadaFragment"
+            android:id="@+id/action_detalles_to_portadaFragment"
             app:destination="@id/portadaFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/maps"
+        android:name="iestr.gag.grafo6.MapsFragment"
+        android:label="Maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>

@@ -15,8 +15,7 @@
         android:layout_height="114dp"
         android:background="#FF9800"
         android:gravity="center"
-        android:text="Para registrar una incidencia debe seguir los siguientes pasos:
-"
+        android:text="Sigue los siguientes pasos: "
         android:textAlignment="inherit"
         android:textColor="@color/white"
         android:textSize="24sp"
