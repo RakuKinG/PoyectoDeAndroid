@@ -62,11 +62,11 @@ class PortadaFragment : Fragment() {
         enlace.InformarIncidencia.setOnClickListener {
 
 
-            if(!validarDNI()){
-                Toast.makeText(context, "El DNI no es correcto", Toast.LENGTH_SHORT).show()
-
-            }else if(enlace.nombre.text.isNullOrBlank()){
+            if(enlace.nombre.text.isNullOrBlank()){
                 Toast.makeText(context, "El nombre no puede estar vacio", Toast.LENGTH_SHORT).show()
+
+            }else if(!validarDNI()){
+                    Toast.makeText(context, "El DNI no es correcto", Toast.LENGTH_SHORT).show()
             }else if (!validarEmail()) {
 
                 Toast.makeText(context, "Formato de correo no valido", Toast.LENGTH_SHORT).show();
