@@ -11,8 +11,8 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="186dp"
-        android:layout_height="114dp"
+        android:layout_width="418dp"
+        android:layout_height="132dp"
         android:background="#FF9800"
         android:gravity="center"
         android:text="Sigue los siguientes pasos: "
@@ -21,16 +21,16 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1.- Primero debera rellenar los datos personales del formulario que se encuentra al abrir la aplicacion.\n\n2.- Debe rellenar los campos obligatorios*.\n\n3.- Cuando pulse Informar Incidencia, sera redirigido a la siguiente ventana donde procedera a rellenar la incidencia, de que se trata, lugar y evidencias.\n\n4.-Su incidencia pasara ha estado de revision, y recibira una notificacion por email del estado de la incidencia"
+        android:text="1.- Primero debera rellenar los datos personales del formulario que se encuentra al abrir la aplicacion.\n\n2.- Debe rellenar los campos obligatorios*.\n\n3.- Cuando pulse Informar Incidencia, sera redirigido a la siguiente ventana donde procedera a rellenar la incidencia, de que se trata, lugar y evidencias.\n\n4.-Su incidencia pasara ha estado de revision"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="italic"

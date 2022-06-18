@@ -33,19 +33,6 @@
         app:layout_constraintVertical_bias="0.88" />
 
     <EditText
-        android:id="@+id/movil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Telefono Movil"
-        android:inputType="phone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dni"
-        app:layout_constraintVertical_bias="0.050000012" />
-
-    <EditText
         android:id="@+id/nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,6 +41,7 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.07999998" />
@@ -67,9 +55,36 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre"
+        app:layout_constraintTop_toBottomOf="@+id/nombreErrorUsuario"
         app:layout_constraintVertical_bias="0.050000012" />
+
+    <EditText
+        android:id="@+id/movil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Telefono Movil"
+        android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dniErrorUsuario"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <TextView
+        android:id="@+id/emailErrorUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="El email no es correcto"
+        android:textColor="#FF0000"
+        android:textColorHint="#FF0000"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/correo"
+        app:layout_constraintTop_toBottomOf="@+id/correo"
+        tools:visibility="visible" />
 
     <EditText
         android:id="@+id/correo"
@@ -80,8 +95,45 @@
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movil"
+        app:layout_constraintTop_toBottomOf="@+id/telefonoErrorUsuario"
         app:layout_constraintVertical_bias="0.050000012" />
+
+    <TextView
+        android:id="@+id/telefonoErrorUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="El telefono movil no es correcto"
+        android:textColor="#FF0000"
+        android:textColorHint="#FF0000"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/movil"
+        app:layout_constraintTop_toBottomOf="@+id/movil"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/dniErrorUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="El DNI no es correcto"
+        android:textColor="#FF0000"
+        android:textColorHint="#FF0000"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/dni"
+        app:layout_constraintTop_toBottomOf="@+id/dni"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/nombreErrorUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="El campo nombre no puede quedar vacio"
+        android:textColor="#FF0000"
+        android:textColorHint="#FF0000"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/nombre"
+        app:layout_constraintTop_toBottomOf="@+id/nombre"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

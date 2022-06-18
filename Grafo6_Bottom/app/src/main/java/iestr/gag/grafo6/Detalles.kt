@@ -50,30 +50,32 @@ class Detalles : Fragment() {
 
             }else{
                 enlace.descripcionError.visibility = View.GONE
-                     }
+            }
+
             if(enlace.tipoIncidencia.text.toString().isNullOrBlank()){
                 enlace.tipoError.visibility=View.VISIBLE
 
             }else{
                 enlace.tipoError.visibility=View.GONE
             }
+
             if(enlace.ubicacionIncidencia.text.toString().isNullOrBlank()){
                 enlace.calleError.visibility=View.VISIBLE
 
+            } else {
+                enlace.calleError.visibility=View.GONE
             }
-            else {
-                enlace.calleError.visibility=View.VISIBLE
-            }
-            if (enlace.calleError.visibility==View.GONE &&
-                enlace.tipoIncidencia.visibility==View.GONE &&
-                enlace.tituloIncidencia.visibility==View.GONE &&
-                enlace.descripcionError.visibility==View.GONE &&
-                enlace.ubicacionIncidencia.visibility==View.GONE){
 
-            Toast.makeText(context, "Informe Creado", Toast.LENGTH_SHORT).show()
-            insertar()
-            findNavController().navigate(R.id.action_detalles_to_portadaFragment)
+            if (enlace.nombreError.visibility==View.GONE &&
+                enlace.descripcionError.visibility==View.GONE &&
+                enlace.tipoError.visibility==View.GONE &&
+                enlace.calleError.visibility==View.GONE){
+
+                Toast.makeText(context, "Informe Creado", Toast.LENGTH_SHORT).show()
+                insertar()
+                findNavController().navigate(R.id.action_detalles_to_portadaFragment)
         }
+
         enlace.imageButton.setOnClickListener{
                 findNavController().navigate(R.id.action_detalles_to_maps)
             }
@@ -93,6 +95,8 @@ class Detalles : Fragment() {
 
         val ubicacion: String = enlace.ubicacionIncidencia.text.toString()
 
+        val imagen :String=enlace.imagenIncidencia.text.toString()
+
         var dni_usuario=""
         arguments?.let {
             val datos = DetallesArgs.fromBundle(it)
@@ -102,7 +106,7 @@ class Detalles : Fragment() {
 
 
         // Instantiate the RequestQueue.
-        val url = "http://192.168.0.24/insertarIncidencia.php"
+        val url = "http://192.168.43.44/insertarIncidencia.php"
         val jsonRequest = object : StringRequest(
             Request.Method.POST, url, { response ->
 
@@ -119,6 +123,7 @@ class Detalles : Fragment() {
                 parametros.put("ubicacion", ubicacion)
                 parametros.put("fecha",fecha)
                 parametros.put("dni_usuario",dni_usuario)
+                parametros.put("imagen",imagen)
                 return parametros
             }
 

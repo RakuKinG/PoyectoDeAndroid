@@ -17,9 +17,11 @@
             android:text="Incidencia:"
             android:textAlignment="center"
             android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.01999998" />
 
         <EditText
             android:id="@+id/tituloIncidencia"
@@ -44,10 +46,9 @@
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tituloIncidencia"
-            app:layout_constraintVertical_bias="0.100000024" />
+            app:layout_constraintTop_toBottomOf="@+id/nombreError"
+            app:layout_constraintVertical_bias="0.050000012" />
 
         <EditText
             android:id="@+id/tipoIncidencia"
@@ -58,10 +59,9 @@
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/descripcionIncidencia"
-            app:layout_constraintVertical_bias="0.100000024" />
+            app:layout_constraintTop_toBottomOf="@+id/descripcionError"
+            app:layout_constraintVertical_bias="0.04000002" />
 
         <EditText
             android:id="@+id/ubicacionIncidencia"
@@ -72,10 +72,9 @@
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tipoError"
-            app:layout_constraintVertical_bias="0.100000024" />
+            app:layout_constraintVertical_bias="0.050000012" />
 
         <Button
             android:id="@+id/botonInicidencia"
@@ -107,7 +106,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calleError" />
+            app:layout_constraintTop_toBottomOf="@+id/imagenIncidencia"
+            app:layout_constraintVertical_bias="0.120000005" />
 
         <TextView
             android:id="@+id/nombreError"
@@ -118,7 +118,6 @@
             android:textAlignment="center"
             android:textColor="#FF0000"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/descripcionIncidencia"
             app:layout_constraintStart_toStartOf="@+id/tituloIncidencia"
             app:layout_constraintTop_toBottomOf="@+id/tituloIncidencia"
             tools:visibility="visible" />
@@ -131,7 +130,6 @@
             android:textAlignment="center"
             android:textColor="#FF0000"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/tipoIncidencia"
             app:layout_constraintStart_toStartOf="@+id/descripcionIncidencia"
             app:layout_constraintTop_toBottomOf="@+id/descripcionIncidencia"
             tools:visibility="visible" />
@@ -140,16 +138,13 @@
             android:id="@+id/tipoError"
             android:layout_width="419dp"
             android:layout_height="59dp"
-            android:text="El campo tipo no puede quedar vacio \n Farolas fundidas, bancos rotos, \n papeleras rotas, acerado en mal estado…"
+            android:text="El campo tipo no puede quedar vacio \n Ej. Farolas fundidas, bancos rotos, \n papeleras rotas, acerado en mal estado…"
             android:textAlignment="center"
             android:textColor="#FF0000"
             android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tipoIncidencia"
-            app:layout_constraintVertical_bias="0.0"
             tools:visibility="visible" />
 
         <TextView
@@ -164,6 +159,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ubicacionIncidencia"
             tools:visibility="visible" />
+
+        <EditText
+            android:id="@+id/imagenIncidencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Url de imagen"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calleError"
+            app:layout_constraintVertical_bias="0.050000012" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

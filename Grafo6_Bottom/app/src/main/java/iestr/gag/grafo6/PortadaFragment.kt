@@ -62,22 +62,36 @@ class PortadaFragment : Fragment() {
         enlace.InformarIncidencia.setOnClickListener {
 
 
-            if(enlace.nombre.text.isNullOrBlank()){
-                Toast.makeText(context, "El nombre no puede estar vacio", Toast.LENGTH_SHORT).show()
+            if(enlace.nombre.text.isNullOrBlank()) {
+                enlace.nombreErrorUsuario.visibility = View.VISIBLE
+            }else{
+                enlace.nombreErrorUsuario.visibility = View.GONE
 
-            }else if(!validarDNI()){
-                    Toast.makeText(context, "El DNI no es correcto", Toast.LENGTH_SHORT).show()
-            }else if (!validarEmail()) {
-
-                Toast.makeText(context, "Formato de correo no valido", Toast.LENGTH_SHORT).show();
-
-            }else if(!(enlace.movil.text.isNullOrBlank())){
-                if (enlace.movil.text.length>=9){
-                    navega()
-                }else{
-                    Toast.makeText(context, "El numero de telefono debe ser correcto", Toast.LENGTH_SHORT).show();
-                }
+            }
+            if(!validarDNI()) {
+                enlace.dniErrorUsuario.visibility = View.VISIBLE
             }else {
+                enlace.dniErrorUsuario.visibility = View.GONE
+            }
+
+            if (!validarEmail()) {
+                enlace.emailErrorUsuario.visibility = View.VISIBLE
+            }else{
+                enlace.emailErrorUsuario.visibility = View.GONE
+            }
+
+            if(!(enlace.movil.text.isNullOrBlank())){
+                if (enlace.movil.text.length==9){
+                    enlace.telefonoErrorUsuario.visibility = View.GONE
+                }else{
+                    enlace.telefonoErrorUsuario.visibility = View.VISIBLE
+                }
+            }
+
+            if (enlace.nombreErrorUsuario.visibility==View.GONE &&
+                enlace.dniErrorUsuario.visibility==View.GONE &&
+                enlace.emailErrorUsuario.visibility==View.GONE &&
+                enlace.telefonoErrorUsuario.visibility==View.GONE ){
                 navega()
             }
         }
@@ -103,7 +117,7 @@ class PortadaFragment : Fragment() {
             movil="0"
         }
         // Instantiate the RequestQueue.
-        val url = "http://192.168.0.24/insertar.php"
+        val url = "http://192.168.43.44/insertar.php"
 
         /*val jsonObject=JSONObject()
         jsonObject.put("nombre",nombre)
