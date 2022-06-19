@@ -86,6 +86,8 @@ class PortadaFragment : Fragment() {
                 }else{
                     enlace.telefonoErrorUsuario.visibility = View.VISIBLE
                 }
+            }else{
+                enlace.telefonoErrorUsuario.visibility=View.GONE
             }
 
             if (enlace.nombreErrorUsuario.visibility==View.GONE &&
